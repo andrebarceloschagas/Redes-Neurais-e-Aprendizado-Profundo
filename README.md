@@ -1,6 +1,6 @@
 # Redes Neurais e Aprendizado Profundo (Deep Learning) 2025/2
 
-Repositório de códigos e anotações disciplina de Redes Neurais e Aprendizado Profundo (Deep Learning) do curso de Ciência da Computação da Universidade Federal do Tocantins.
+Repositório de códigos e anotações da disciplina de Redes Neurais e Aprendizado Profundo (Deep Learning) do curso de Ciência da Computação da Universidade Federal do Tocantins.
 
 Professor: Dr. Marcelo Lisboa
 
