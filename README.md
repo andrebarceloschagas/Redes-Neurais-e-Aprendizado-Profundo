@@ -14,7 +14,6 @@ Aluno: [Antonio André Barcelos Chagas](https://github.com/andrebarceloschagas)
 - **`README.md`**: Documentação do projeto e evolução dos modelos.
 
 
-
 ## Análise da Evolução dos Modelos de Detecção de Tumores Cerebrais
 
 Este relatório detalha a evolução dos modelos de Deep Learning desenvolvidos para a detecção de tumores cerebrais em imagens de ressonância magnética (MRI). O processo partiu de uma adaptação simples de um modelo de classificação de cães e gatos, evoluindo para um classificador mais sofisticado utilizando Transfer Learning com EfficientNetB0, e culminando em um modelo otimizado com fine-tuning avançado.
@@ -33,9 +32,7 @@ Este relatório detalha a evolução dos modelos de Deep Learning desenvolvidos 
 | **Otimizador** | Não especificado (implícito) | Adam (`lr=0.001`) | Adam (Fase 1: `0.001`, Fase 2: `1e-5`) |
 | **Acurácia (Validação)** | N/A (foco didático) | ~50-60% (Estagnado) | **>90%** (Estimado) |
 
----
-
-## 2. Detalhes das Iterações
+## 2. Detalhes das Mudanças e Melhorias
 
 ### 1. Modelo Base: Classificação de Cães e Gatos (`cnn_caes_gatos.ipynb`)
 Este notebook serviu como ponto de partida conceitual. Ele implementava um fluxo básico de classificação binária.
@@ -71,8 +68,6 @@ Esta foi a mudança mais impactante. Em vez de apenas treinar o classificador fi
 O topo da rede foi robustecido para lidar com a complexidade das 4 classes de tumores:
 * **GlobalAveragePooling2D:** Reduz a dimensionalidade espacial.
 * **Dense (512) + BatchNormalization + Dropout (0.4):** Uma camada densa larga com regularização forte para aprender combinações não-lineares de características sem overfitting.
-
----
 
 ## 3. Conclusão
 
