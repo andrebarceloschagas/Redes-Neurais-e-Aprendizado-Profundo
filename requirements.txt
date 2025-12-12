@@ -1,0 +1,11 @@
+tensorflow
+keras
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+pillow
+h5py
+notebook
+ipykernel

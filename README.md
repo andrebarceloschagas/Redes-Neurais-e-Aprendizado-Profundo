@@ -7,11 +7,123 @@ Professor: Dr. Marcelo Lisboa
 Aluno: [Antonio André Barcelos Chagas](https://github.com/andrebarceloschagas)
 
 
+## Índice
+- [Conteúdo do Repositório](#conteúdo-do-repositório)
+- [Como Executar os Notebooks](#como-executar-os-notebooks)
+  - [Opção 1: Google Colab (Recomendado)](#opção-1-google-colab-recomendado)
+  - [Opção 2: VS Code (Local)](#opção-2-vs-code-local)
+  - [Opção 3: Jupyter Notebook (Local)](#opção-3-jupyter-notebook-local)
+  - [Estrutura do Dataset](#estrutura-do-dataset)
+- [Análise da Evolução dos Modelos](#análise-da-evolução-dos-modelos-de-detecção-de-tumores-cerebrais)
+  - [1. Visão Geral da Evolução](#1-visão-geral-da-evolução)
+  - [2. Detalhes das Mudanças e Melhorias](#2-detalhes-das-mudanças-e-melhorias)
+    - [Modelo Base: Classificação de Cães e Gatos](#1-modelo-base-classificação-de-cães-e-gatos-cnn_caes_gatosipynb)
+    - [Primeira Adaptação: Transfer Learning Rígido](#2-primeira-adaptação-transfer-learning-rígido-cnn_brain_tumoripynb)
+    - [Modelo Final: Otimização e Fine-Tuning](#3-modelo-final-otimização-e-fine-tuning-cnn_brain_tumor_2ipynb)
+  - [3. Conclusão](#3-conclusão)
+
+
 ## Conteúdo do Repositório
 - **`cnn_caes_gatos.ipynb`**: Implementação inicial de uma CNN para classificação de imagens de cães e gatos.
 - **`cnn_brain_tumor.ipynb`**: Adaptação do modelo para detecção de tumores cerebrais utilizando Transfer Learning com EfficientNetB0.
 - **`cnn_brain_tumor_2.ipynb`**: Versão otimizada do modelo de detecção de tumores cerebrais com fine-tuning avançado.
+- **`requirements.txt`**: Lista de dependências necessárias para executar os notebooks.
 - **`README.md`**: Documentação do projeto e evolução dos modelos.
+
+
+## Como Executar os Notebooks
+
+### Opção 1: Google Colab (Recomendado)
+O Google Colab oferece acesso gratuito a GPUs e é ideal para treinamento de modelos de Deep Learning.
+
+1. **Acesse o Google Colab**: [https://colab.research.google.com/](https://colab.research.google.com/)
+2. **Faça upload do notebook** ou abra diretamente do GitHub:
+   - Clique em `File` → `Upload notebook`
+   - Ou clique em `File` → `Open notebook` → aba `GitHub` e cole a URL do repositório
+3. **Monte o Google Drive** (necessário para acessar o dataset):
+   ```python
+   from google.colab import drive
+   drive.mount('/content/drive')
+   ```
+4. **Habilite a GPU**:
+   - Vá em `Runtime` → `Change runtime type`
+   - Selecione `GPU` em `Hardware accelerator`
+5. **Execute as células sequencialmente** pressionando `Shift + Enter`
+
+**Observação**: Os notebooks já possuem células de montagem do Google Drive configuradas.
+
+### Opção 2: VS Code (Local)
+Para executar localmente no VS Code, você precisará de um ambiente Python configurado.
+
+#### Pré-requisitos:
+- Python 3.8 ou superior
+- VS Code instalado
+- Extensão **Jupyter** para VS Code
+
+#### Passos:
+
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/andrebarceloschagas/Redes-Neurais-e-Aprendizado-Profundo.git
+   cd Redes-Neurais-e-Aprendizado-Profundo
+   ```
+
+2. **Crie um ambiente virtual** (recomendado):
+   ```bash
+   python -m venv venv
+   
+   # No Linux/Mac:
+   source venv/bin/activate
+   
+   # No Windows:
+   venv\Scripts\activate
+   ```
+
+3. **Instale as dependências**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Baixe o dataset**:
+   - Acesse [Kaggle Brain Tumor MRI Dataset](https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset)
+   - Extraia as pastas `Training` e `Testing` no diretório do projeto
+
+5. **Abra o notebook no VS Code**:
+   - Abra o arquivo `.ipynb` no VS Code
+   - Selecione o kernel Python do seu ambiente virtual
+   - Execute as células normalmente
+
+**Observação**: O treinamento local pode ser lento sem uma GPU dedicada. Para melhor performance, considere usar o Google Colab.
+
+### Opção 3: Jupyter Notebook (Local)
+
+1. **Instale as dependências** (siga os passos 1-3 da Opção 2)
+
+2. **Inicie o Jupyter Notebook**:
+   ```bash
+   jupyter notebook
+   ```
+
+3. **Navegue até o notebook** desejado no navegador que abrirá automaticamente
+
+4. **Execute as células** sequencialmente
+
+### Estrutura do Dataset
+O projeto espera a seguinte estrutura de diretórios:
+```
+trabalho_final/
+├── Training/
+│   ├── glioma/
+│   ├── meningioma/
+│   ├── notumor/
+│   └── pituitary/
+├── Testing/
+│   ├── glioma/
+│   ├── meningioma/
+│   ├── notumor/
+│   └── pituitary/
+└── (notebooks e arquivos do projeto)
+```
 
 
 ## Análise da Evolução dos Modelos de Detecção de Tumores Cerebrais
